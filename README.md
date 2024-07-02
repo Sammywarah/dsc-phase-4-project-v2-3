@@ -31,7 +31,7 @@ Showmax aims to provide a tailored viewing experience by recommending the top 5 
 ## Navigating the Repository
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/yourusername/movie-recommender.git
+   (https://github.com/Sammywarah/dsc-phase-4-project-v2-3.git)
     ```
 2. **Change to the project directory**:
     ```bash
