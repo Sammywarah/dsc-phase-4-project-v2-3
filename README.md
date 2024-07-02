@@ -1,206 +1,69 @@
-# Phase 4 Project Description
+# Showmax Personalized Recommendation System
 
-Final phase down -- you're absolutely crushing it! You've made it all the way through one of the toughest phases of this course. You must have an amazing brain in your head!
+## Overview
+This project focuses on developing a movie recommendation system using collaborative filtering techniques. The system employs the K-Nearest Neighbors (KNN) algorithm with mean ratings to predict and recommend movies to users based on their past ratings.
 
-<img src='https://raw.githubusercontent.com/learn-co-curriculum/dsc-phase-4-project-v2-3/main/images/brain.gif'>
+## Business Understanding
+Showmax is a subscription-based video-on-demand service that offers a wide variety of TV shows, movies, and original content for streaming over the internet. The service focuses on providing entertainment content to subscribers, emphasizing convenience, choice, and quality of the viewing experience to attract and retain customers in a competitive digital streaming market.
 
-You have one last project to complete before the Capstone!
+## Objective
+The objective of this project is to develop a personalized recommendation system to enhance user engagement and satisfaction on Showmax.
 
-In this project description, we will cover:
+## Specific Task
+The specific task is to build a model that provides the top 5 movie recommendations to a user based on their ratings of other movies.
 
-* Project Overview
-* Deliverables
-* Grading
-* Getting Started
+## Problem Statement
+Showmax aims to provide a tailored viewing experience by recommending the top 5 movies to users based on their past ratings and viewing behaviors. The challenge is to build an effective recommendation model that accurately predicts user preferences, thereby increasing user retention and overall satisfaction with the platform.
 
-## Project Overview
+## Project Structure
 
-For this project, you will engage in an **advanced supervised modeling process** from start to finish, solving either a classification or a regression problem using an advanced dataset.
+## Summary of Data Science Steps
+1. **Data Preparation**: Loading and preparing the dataset for the recommendation system.
+2. **Model Training**: Training the KNNWithMeans model using the Pearson similarity metric.
+3. **Predictions**: Making predictions for movie ratings and recommending top N movies for users.
+4. **Model Evaluation**: Evaluating the model performance using Root Mean Squared Error (RMSE).
+5. **Tuned Model**: Implementing a tuned KNNBaseline model for better prediction accuracy.
 
-### Business Problem and Data
+## Presentation and Sources
+- [Project Presentation](presentation/presentation.pdf)
+- [Dataset Source](data/df_final.csv)
 
-Similar to the Phase 3 project, you are responsible for choosing a dataset as well as defining a stakeholder and business problem. In addition to these choices, you can choose between any of the four advanced supervised modeling techniques covered in Phase 4:
 
-- Time Series Modeling
-- Recommendation System
-- Image Classification with Deep Learning
-- Natural Language Processing
+## Findings
 
-For complete details, see [Phase 4 Project - Choosing a Dataset](https://github.com/learn-co-curriculum/dsc-phase-4-choosing-a-dataset).
+### User-Based Collaborative Filtering
+- **Best Model:** KNN Baseline Model
 
-### Key Points
+#### Interpretation of Results:
+- The KNNBaseline model provided accurate recommendations with higher predicted ratings and lower RMSE, suggesting it may be more effective in recommending top movies compared to KNN with Mean and SVD.
+- KNNBaseline (Before Tuning): RMSE = 0.66
+- Tuned KNNBaseline: RMSE = 0.61
+- Precision: 0.90
+- Recall: 0.79
+- F1 Score: 0.85
 
-### Advanced Data Types and Modeling
+The KNNBaseline model successfully recommended the top 5 movies for users, considering both predicted ratings and similar movie suggestions. The model has a high accuracy F1 Score of 0.85, suggesting it is the best performing model.
 
-The purpose of this project is to demonstrate that you have mastered the basics of some type of modeling technique beyond the techniques introduced in Phase 3. This is your chance to tailor your work to a **data science audience** in particular, with a clear notebook narrative that illustrates your process. The resulting presentation slides will be substantially similar to a Phase 3 presentation, but someone reading your notebook should be able to see your grasp of the specific advanced modeling technique.
+### Conclusions
+The tuned KNNBaseline model is more effective in predicting user preferences compared to the initial model. Improved predictive accuracy translates to more relevant and personalized movie recommendations for users.
 
-### Validation Strategy
+### Recommendations
+- **Use the KNNBaseline Model:** Implement the KNNBaseline model's recommendations to personalize the user experience on Showmax. This can help in engaging users by suggesting movies they are likely to enjoy based on their past ratings.
+- **Generate Top 5 Recommendations:** Use the tuned model to predict ratings and recommend the top 5 movies for each user based on their past ratings and viewing behaviors.
+- **Monitor and Retrain:** Regularly tune and evaluate the recommendation models with new data to ensure they adapt to changing user preferences and movie trends. This will help maintain the accuracy and relevance of recommendations.
+- **Enhance User Engagement:** Focus on user feedback and engagement metrics to refine and improve the recommendation system, ensuring high user satisfaction and retention.
 
-A **validation strategy** means a strategy to demonstrate that your model will actually perform well on unseen data. In Phase 3 this was relatively straightforward to accomplish with the `train_test_split` function from scikit-learn. This may or may not be appropriate for the project you select. Make sure that you are thinking about this strategy from the start and incorporating it into your notebook narrative.
+## Item-Based Collaborative Filtering
+#### Findings:
+- Achieved a mean RMSE of 0.85.
+- Mean MAE: 0.65
 
-### Choosing a Dataset
+This is a higher RMSE compared to the KNNBaseline model, suggesting lower prediction accuracy.
 
-We've given you a lot of choices - don't get stuck spending too much time choosing which project to do. Give yourself a firm time limit for picking a project (e.g. 2 hours) so you can get on with making something great. Don't worry about picking the perfect project - remember that you will get to do a new, larger Capstone project very soon!
+### Recommendations
+- **Consider Hybrid Approaches:** Combine item-based and user-based methods to leverage the strengths of both, potentially improving recommendation accuracy and coverage.
 
-## The Deliverables
+### Conclusions
+The item-based collaborative filtering model, while useful, demonstrated lower accuracy compared to the KNNBaseline model used in user-based collaborative filtering. Integrating it with other methods or using hybrid approaches could enhance the recommendation system’s performance on Showmax.
 
-There are three deliverables for this project:
 
-* A **non-technical presentation**
-* A **Jupyter Notebook**
-* A **GitHub repository**
-
-The checklist of requirements is the same for Phase 4 as it was in Phase 3. This will also be the checklist for Capstone!
-
-### Non-Technical Presentation
-
-The non-technical presentation should be very similar to the presentation you gave in Phase 3. You can feel free to mention the specific models and metrics you used, but make sure you translate everything for an audience who is not familiar with data science.
-
-### Jupyter Notebook
-
-The notebook will have the same checklist elements as in Phase 3. However, **this time around the Communication rubric element will focus on the technical notebook**. A data science professional reading your notebook should be able to understand all of your data preparation and modeling decisions.
-
-### GitHub Repository
-
-The GitHub repository should also be very similar to the Phase 3 repository.
-
-The main additional element to consider is **reproducibility**, since many of the dataset options are too large to be saved directly in a GitHub repository. Make sure you include clear instructions for how someone would reproduce your modeling process, potentially including any scripts you used to organize data into directories.
-
-## Grading
-
-***To pass this project, you must pass each rubric objective.*** The project rubric objectives for Phase 4 are:
-
-1. Attention to Detail
-2. Advanced ML Communication
-3. Advanced Data Preparation
-4. Advanced ML Modeling
-
-### Attention to Detail
-
-Once again, the Attention to Detail standard has increased. ***In Phase 4, you need to complete 90% (9 out of 10) or more of the checklist elements in order to pass the Attention to Detail objective.***
-
-**NOTE THAT THE PASSING BAR IS HIGHER IN PHASE 4 THAN IT WAS IN PHASE 3!**
-
-#### Exceeds Objective
-
-100% of the project checklist items are complete
-
-#### Meets Objective (Passing Bar)
-
-90% of the project checklist items are complete
-
-#### Approaching Objective
-
-80% of the project checklist items are complete
-
-#### Does Not Meet Objective
-
-70% or fewer of the project checklist items are complete
-
-### Advanced ML Communication
-
-Once again, you are expected to communicate the results of an ML modeling process. Just like in Phase 3, we are looking for *rationale, results, limitations, and recommendations.*
-
-In Phase 4, the emphasis is on the **Jupyter Notebook**. The notebook should include a **summary** at the beginning that briefly and accurately describes your process. The summary should be approximately 250 words -- about the size of a research paper abstract.
-
-Summary elements:
-
-* Business and data understanding: *what kind of data are you using, and what makes it well-suited for the business problem?*
-  * You do not need to include any data visualizations in your summary, but consider including relevant descriptive statistics
-* Data preparation: *why did you choose the data preparation steps that you did, and what was the result?*
-  * This should be specific to the kind of data you are working with. For example, if you are doing an NLP project, what did you decide to do with stopwords?
-  * Be sure to list the packages/libraries used to prepare the data, and why
-* Modeling: *what modeling package(s) did you use, which model(s) within the package(s), and what tuning steps did you take?*
-  * For some projects there may be only one applicable package; you should still briefly explain why this was the appropriate choice
-  * For neural networks projects, be sure to describe your model architecture choices
-* Evaluation: *how well did your final model perform?*
-  * Include one or more relevant metrics
-  * Be sure to briefly describe your validation approach
-
-#### Exceeds Objective
-
-Communicates advanced modeling summary as well as a narrative throughout the notebook text that demonstrates mastery of an advanced topic
-
-> Decisions should be justified and outcomes evaluated in Markdown throughout the notebook
-
-#### Meets Objective (Passing Bar)
-
-Successfully communicates a summary of an advanced modeling technique including business and data understanding, data preparation, modeling, and evaluation
-
-> It is possible to meet this bar with just a summary and not a narrative throughout the notebook, so long as the steps taken are justifiable and free of major errors. See the Approaching Objective section for an explanation of what a "major error" means.
-
-#### Approaching Objective
-
-Communicates advanced modeling summary with at least one major error
-
-> A major error means that one of the required elements of the summary was missing, or some aspect of the communication was fundamentally incorrect. For example, if you stated that you performed "deep learning" when you actually used `CountVectorizer` and `MultinomialNB` from scikit-learn, that would be a major error. Another example would be if you described a regression task as a classification task, or if you described supervised learning as unsupervised learning.
-
-#### Does Not Meet Objective
-
-Does not communicate advanced modeling summary
-
-> Markdown headings and occasional narrative text throughout the notebook are not sufficient in this phase, even if they were in previous phases. You need to include a summary at the beginning of your notebook.
-
-### Advanced Data Preparation
-
-Once again, this objective is very similar to Phase 3, although the complexity has increased.
-
-#### Exceeds Objective
-
-Goes above and beyond with data preparation, such as feature engineering, using pipelines, or using unsupervised techniques
-
-> Supervised learning is the core of this project, but feel free to use unsupervised techniques for data analysis or preparation
-
-#### Meets Objective (Passing Bar)
-
-Successfully prepares data for modeling, using at least one Python package other than scikit-learn
-
-> Your final model does not need to use anything other than scikit-learn, but you should explore other tools during your modeling process
-
-#### Approaching Objective
-
-Prepares some data successfully, but has at least one major error
-
-#### Does Not Meet Objective
-
-Does not prepare data for modeling
-
-### Advanced ML Modeling
-
-This is your real opportunity to flex those new Phase 4 skills!
-
-#### Exceeds Objective
-
-Goes above and beyond in the modeling process, such as using models from multiple different packages or model explainability tools
-
-> You are encouraged but not required to use models from multiple different packages. The feasibility of this depends on your choice of project. For time series, this might mean trying both StatsModels and Prophet. For image classification, this might mean using TensorFlow with and without transfer learning.
-
-> See [this book chapter](https://christophm.github.io/interpretable-ml-book/lime.html) for an introduction to LIME for model explainability
-
-#### Meets Objective (Passing Bar)
-
-Successfully builds and evaluates multiple models using an appropriate model validation technique
-
-> As noted previously, the `train_test_split` from scikit-learn may or may not be appropriate for your modeling task. Be sure to investigate appropriate techniques so you are confident in the performance of your final model on unseen data
-
-#### Approaching Objective
-
-Builds multiple models with at least one major error
-
-#### Does Not Meet Objective
-
-Does not build multiple models
-
-## Getting Started
-
-Please start by reviewing the contents of this project description. If you have any questions, please ask your instructor ASAP.
-
-Once you are ready to begin the project, you will need to complete the Project Proposal.
-
-Recall that more information is available in [Phase 4 Project - Choosing a Dataset](https://github.com/learn-co-curriculum/dsc-phase-4-choosing-a-dataset).
-
-To get started with project development, create a new repository on GitHub. For this project, we recommend that you do not fork the template repository, but rather that you make a new repository from scratch, starting by going to [github.com/new](https://github.com/new).
-
-## Summary
-
-This project is your chance to show off your data science prowess with some advanced machine learning algorithms. Now that you've gone through all of the core course content, we're excited to see what you are able to do!
