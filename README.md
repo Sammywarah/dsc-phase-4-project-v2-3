@@ -28,7 +28,23 @@ Showmax aims to provide a tailored viewing experience by recommending the top 5 
 - [Project Presentation](presentation/presentation.pdf)
 - [Dataset Source](data/df_final.csv)
 
+## Navigating the Repository
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/yourusername/movie-recommender.git
+    ```
+2. **Change to the project directory**:
+    ```bash
+    cd movie-recommender
+    ```
+3. **Install the required dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
+4. **Run the Jupyter notebook**:
+    Open `notebooks/Phase 4_Project.ipynb` in Jupyter Notebook to train the model and generate recommendations.
 
+   
 ## Findings
 
 ### User-Based Collaborative Filtering
